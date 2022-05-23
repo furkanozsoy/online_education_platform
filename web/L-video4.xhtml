@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg ">
+
+            <div class="container-fluid">
+                <a href="L-anasayfa.xhtml"  class="pull-left"><img src="https://i.hizliresim.com/tehzuvg.png" alt="" /></a> 
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" />
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav">
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="login-nav-item">
+                            <a class="nav-link active" aria-current="page" href="L-anasayfa.xhtml"  style="color: black;">Home</a>
+                        </li>
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="login-nav-item">
+                            <!--a class="nav-link" href="L-kurslar.xhtml" style="color: black;">Kurslar</a-->
+                            <h:form style=" margin-top: 5% ;" ><h:commandButton  style=" border: none; font-family: sans-serif; margin-right: 25%; 
+                                                      font-weight: bold; background-color:lightsalmon; border-bottom-color: lightsalmon ; color:black "
+                                                      type="submit"  action="#{productController.displayProducts()}" value="Kurslar"/></h:form>
+                        </li>
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="login-nav-item">
+                            <!--a class="nav-link" href="L-kurslarım.xhtml" style="color: black; width: 30%;">Kurslarım</a-->
+                            <h:form style=" margin-top: 5% ;" > <h:commandButton  style=" border: none; font-family: sans-serif; margin-right: 25%;
+                                                      font-weight: bold; background-color:lightsalmon; border-bottom-color: lightsalmon ; color:black ;  " 
+                                                      type="submit"  action="#{productController.displayAssets()}" value="Kurslarım"/></h:form>
+                        </li>
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="login-nav-item">
+                            <a class="nav-link" href="L-profilim.xhtml" style="color: black; width: 30%;">Profilim</a>
+                        </li>
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="login-nav-item">
+                            <h:form style=" margin-top: 5% ;" > <h:commandButton  style=" border: none; font-family: sans-serif; margin-right: 25%;
+                                                      font-weight: bold; background-color:lightsalmon; border-bottom-color: lightsalmon ; color:black ;  " 
+                                                      type="submit"  action="#{userController.displayCart()}" value="Sepetim"/></h:form>
+                        </li>
+
+                        <li style="font-weight: bold; margin-right: 25%; font-family: sans-serif; " class="Mlogin-nav-item">
+                            <a style="color: black; width: 30%;">Merhaba,
+                                #{loginController.user.username}</a>
+                        </li>
+
+                        <h:form style="margin-right: 25%; margin-top: 5% ; " id="user-form">  
+                            <h:commandButton id="submit-button" style=" border: none; font-family: sans-serif; margin-right: 25%; 
+                                             font-weight: bold; background-color:lightsalmon; border-bottom-color: lightsalmon " value="Logout" action="#{loginController.logout()}"/>  
+                        </h:form>  
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="bg-image"><img src="https://i.hizliresim.com/op6isnc.jpg" alt="" /></div>
+
+        <div class="bg-text">
+            <iframe width="720" height="480" src="https://www.youtube.com/embed/lQcpPBECqUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" />
+        </div>
+
+        <script src="js/bootstrap.js"></script>   
+    </h:body>
+</html>
+

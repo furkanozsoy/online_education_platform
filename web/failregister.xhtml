@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+        <nav Style="width:101% " class="navbar navbar-expand-lg ">
+
+            <div class="container-fluid">
+                <a href="index.xhtml" class="pull-left"><img src="https://i.hizliresim.com/tehzuvg.png" alt="" /></a> 
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" />
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav">
+
+                        <li style="margin-right: 240%;" class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.xhtml" style="color: black;">Home</a>
+                        </li>
+
+                        <li style="margin-right: 240%;" class="nav-item">
+                            <a class="nav-link" href="kurslar.xhtml" style="color: black;">Kurslar</a>
+                        </li>
+
+                        <li style="margin-right: 240%;" class="nav-item">
+                            <a class="nav-link" href="login.xhtml" style="color: black; width: 30%;">Kaydol/Giriş</a>
+                        </li>                    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="bg-image"><img src="https://i.hizliresim.com/op6isnc.jpg" alt="" /></div>
+
+        <div class="regpage-text">
+            <main class="form-signin">
+                <h:form>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Hatalı Kayıt!</strong> Lütfen bilgilerinizi kontrol edip tekrar kayıt olmayı deneyin.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <img class="mb-4" src="https://i.hizliresim.com/qjhxlo7.png" alt="" width="300" height="85" />
+
+                    <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+
+
+                    <div class="form-floating">
+                        <h:inputText value="#{accountController.user.username}" class="form-control" id="username" />
+                        <label for="floatingInput" style="color: black;">Username</label>
+                    </div>
+
+                    <p><br /></p>
+
+                    <div class="form-floating">
+                        <h:inputSecret  value="#{accountController.user.password}" class="form-control" id="password" />
+                        <label for="floatingPassword" style="color: black;">Password </label>
+                    </div>
+
+                    <p><br /></p>
+
+                    <div class="form-floating">
+                        <h:inputSecret  class="form-control" id="floatingInput" />
+                        <label for="floatingInput" style="color: black;">Password Again</label>
+                    </div>
+
+                    <p><br /></p>
+
+                    <div class="form-floating">
+                        <h:inputText  value="#{accountController.user.namesurname}" class="form-control" id="nameSurname" />
+                        <label for="floatingInput" style="color: black;">Name&amp;Surname</label>
+                    </div>
+
+                    <p><br /></p>
+                    <div class="form-floating">
+                        <h:inputText  value="#{accountController.user.email}" class="form-control" id="e-mail" />
+                        <label for="floatingInput" style="color: black;">E-mail</label>
+                    </div>
+
+                    <p><br /></p>
+                    <div class="form-floating">
+                        <h:inputText value="#{accountController.user.birthDate}" class="form-control" id="date" p:placeholder="Date" >
+                            <f:convertDateTime pattern="MM/dd/yyyy" type="date" /></h:inputText>
+                        <label for="floatingInput" style="color: black;">Date Of Birth</label>
+                        <small id="passwordHelpBlock" class="Bform-text Btext-muted">
+                            Tarih formatı Ay/Gün/Yıl şeklinde olmalıdır (02/18/2000)
+                        </small>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                    </div>
+                    <h:commandButton  value="Kayıt Ol" action="#{accountController.signUp()}" class="w-100 btn btn-lg btn-primary" type="submit"/>
+                </h:form>
+            </main>
+        </div>
+
+        <script src="js/bootstrap.js"></script>
+    </h:body>
+</html>

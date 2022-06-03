@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://java.sun.com/jsf/html">  
+    <h:head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-expand-lg ">
+
+            <div class="container-fluid">
+                <a href="index.xhtml" class="pull-left"><img src="https://i.hizliresim.com/tehzuvg.png" alt="" /></a> 
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" />
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.xhtml" style="color: black;">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="kategorisayfasi.xhtml" style="color: black;">Kategoriler</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="loginpage.xhtml" style="color: black; width: 30%;">Kaydol/Giriş</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="bg-image"><img src="https://i.hizliresim.com/op6isnc.jpg" alt="" /></div>
+
+        <div class="logpage-text">
+            <main class="form-signin">
+                <h:form>
+                    <img class="mb-4" src="https://i.hizliresim.com/qjhxlo7.png" alt="" width="300" height="85" />
+
+                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+
+                    <div class="form-floating">
+                        <h:inputText value="#{loginController.user.username}" class="form-control" id="floatingInput" p:placeholder="Username" ></h:inputText>
+                        <label for="floatingInput" style="color: black;">Username</label>
+                    </div>
+
+                    <p><br /></p>
+
+                    <div class="form-floating">
+                        <h:inputSecret value="#{loginController.user.password}" id="password" class="form-control"  p:placeholder="Password" ></h:inputSecret>
+                        <label for="floatingPassword" style="color: black;">Password </label>
+                    </div>
+
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me" /> Remember me
+                        </label>
+                    </div>
+                    <h:commandButton action="#{loginController.validateUsernamePassword()}" class="w-100 btn btn-lg btn-primary" type="submit" 
+                                     actionListener="#{facesContext.getMessages()}" value="login" />
+
+                    <p><br />Not a member yet?</p>
+                    <a href="registerpage.xhtml" class="w-100 btn btn-lg btn-primary">Register</a>
+
+                </h:form>
+            </main>
+        </div>
+
+        <script src="js/bootstrap.js"></script> 
+    </h:body>
+</html>
+

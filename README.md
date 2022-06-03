@@ -1,1 +1,1 @@
-# online_education_platform
+# e-educationplatform.project

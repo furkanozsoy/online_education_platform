@@ -5,6 +5,7 @@
  */
 package project.serviceImpl;
 
+import project.controller.LoginController;
 import project.model.ResponseModel;
 import project.model.User;
 import project.repository.LoginRepository;
@@ -15,6 +16,7 @@ import project.session.UserSession;
 public class LoginServiceImpl implements LoginService{
     
     private LoginRepository loginRepository=new LoginRepository();
+    
     
     @Override
     public ResponseModel <User> login(String username, String password){        
@@ -28,14 +30,15 @@ public class LoginServiceImpl implements LoginService{
         }else{
             responsemodel.setIsSuccess(false);
             responsemodel.setMessage("Login failed!");
-            responsemodel.setResponseObject(user);        
-        }
-        UserSession.setUser(user);
+            responsemodel.setResponseObject(null);        
+        }       
+        UserSession.setUser(user);      
         return responsemodel;
     }
     
     @Override
-    public ResponseModel<Boolean> logout() {        
+    public ResponseModel<Boolean> logout() {
+        
         UserSession.clear();
         ResponseModel responsemodel=new ResponseModel(); 
         responsemodel.setIsSuccess(true);

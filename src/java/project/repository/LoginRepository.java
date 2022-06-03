@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import project.databaseconnection.DatabaseConnection;
+import project.model.Cart;
 import project.model.User;
 
 
@@ -29,11 +30,13 @@ public class LoginRepository {
             ps.setString(2, password);
             rs=ps.executeQuery();            
             if(rs.next()){                
+                user.setId(rs.getInt("ID"));
                 user.setUsername(rs.getString("USERNAME"));
                 user.setNamesurname(rs.getString("NAMESURNAME"));
                 user.setPassword(rs.getString("PASSWORD"));                              
                 user.setEmail(rs.getString("EMAIL"));
-                user.setBirthDate(rs.getDate("BIRTHDATE"));              
+                user.setBirthDate(rs.getDate("BIRTHDATE"));
+                user.setCart(new Cart());               
                 return user;
             }else{
                 return null;

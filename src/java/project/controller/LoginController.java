@@ -2,15 +2,15 @@
 package project.controller;
 
 import java.io.Serializable;
-
-import javax.faces.application.FacesMessage;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 import project.model.ResponseModel;
 import project.model.User;
 import project.serviceImpl.LoginServiceImpl;
+import project.session.UserSession;
 import project.utils.SessionUtils;
 
 @Named
@@ -21,8 +21,9 @@ public class LoginController implements Serializable{
     private User user;
         
     public User getUser() {
-        if(this.user==null)
-            this.user=new User();       
+        if(this.user==null){
+            user=new User();   
+        }    
         return user;
     }
 
@@ -36,16 +37,19 @@ public class LoginController implements Serializable{
         if (responsemodel.getIsSuccess()) {
             HttpSession session = SessionUtils.getSession();
             session.setAttribute("username", user);
-            return "index";
+            this.user=UserSession.getUser();
+            return "L-anasayfa";
         }else{
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN,"Incorrect Username and Password","Please enter correctly"));
-            return "login";
+            return "faillogin";
         }    
     }
     
     public String logout(){
+        this.user=null;
         HttpSession session = SessionUtils.getSession();
-        session.invalidate();
-	return "index";
-    }
+        session.invalidate();       
+	UserSession.clear();
+        return "login";
+    }         
 }

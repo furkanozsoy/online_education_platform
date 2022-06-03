@@ -4,18 +4,19 @@ package project.model;
 
 public class Product {
     
-    private String productId;
+    private int productId;
     private Double price;
-    private String status;//düşünülecek
     private Float productRating;
-    private String name;
-    private String URL;
+    private String title;
+    private String url;
+    private String imageUrl;
+    private String text;    
 
-    public String getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
@@ -27,14 +28,6 @@ public class Product {
         this.price = price;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Float getProductRating() {
         return productRating;
     }
@@ -43,22 +36,36 @@ public class Product {
         this.productRating = productRating;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getURL() {
-        return URL;
+    public String getUrl() {
+        return url;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setUrl(String url) {
+        this.url = url;
     }
-    
-    
-    
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+   
 }

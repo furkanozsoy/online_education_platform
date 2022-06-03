@@ -14,7 +14,7 @@ import project.model.ResponseModel;
  */
 public interface AccountService {
     
-     public ResponseModel<Boolean> changePassword(String oldPassword , String newPassword , String accountId);
+     public ResponseModel<Boolean> changePassword(String oldPassword , String newPassword , int accountId);
      
      public ResponseModel<Boolean> signUp(String username , String email , String password , String namesurname , Date birthdate);
     
